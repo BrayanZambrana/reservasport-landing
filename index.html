@@ -1,442 +1,56 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReservaSport | Sistema de Gestión y Reservas para Complejos Deportivos en Bolivia</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#0B0F17',
-                            card: '#151C28',
-                            border: '#2A3548',
-                            neon: '#10B981', // Emerald 500
-                            neonHover: '#059669',
-                            lime: '#84CC16',
-                            accent: '#06B6D4'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-neon selection:text-brand-dark">
+// 1. PETICIÓN POST DESDE LA LANDING HACIA TU API EN .NET
+async function handleFormSubmit(event) {
+    event.preventDefault();
+    const name = document.getElementById('lead-name').value;
+    const phone = document.getElementById('lead-phone').value;
+    const email = document.getElementById('lead-email').value;
+    const complex = document.getElementById('lead-complex').value;
+    const plan = document.getElementById('lead-plan').value;
 
-    <!-- NAVIGATION BAR -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-neon to-brand-lime flex items-center justify-center text-brand-dark font-extrabold text-xl shadow-lg shadow-brand-neon/20">
-                        <i class="fa-solid fa-[#]">RS</i>
-                    </div>
-                    <span class="text-2xl font-black tracking-wider text-white">Reserva<span class="text-brand-neon">Sport</span></span>
-                </div>
+    // URL PÚBLICA DE TU API (localtunnel)
+    const API_URL = "https://olive-mice-chew.loca.lt/api/Suscripciones";
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                    <a href="#simulador" class="hover:text-brand-neon transition-colors">Simulador</a>
-                    <a href="#calculadora" class="hover:text-brand-neon transition-colors">Calculadora</a>
-                    <a href="#pagos-qr" class="hover:text-brand-neon transition-colors">Cobro QR</a>
-                    <a href="#planes" class="hover:text-brand-neon transition-colors">Planes</a>
-                </div>
-
-                <!-- CTA Button -->
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="#registro" class="px-5 py-2.5 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark hover:opacity-95 transition-all shadow-lg shadow-brand-neon/20 transform hover:-translate-y-0.5">
-                        Probar 14 Días Gratis
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+    try {
+        const response = await fetch(`${API_URL}/inscribir`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nombre: name, telefono: phone, correo: email, nombreComplejo: complex, plan: plan })
+        });
         
-        <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-4 pt-2 pb-6 space-y-3">
-            <a href="#simulador" class="block py-2 text-slate-300 hover:text-brand-neon">Simulador</a>
-            <a href="#calculadora" class="block py-2 text-slate-300 hover:text-brand-neon">Calculadora</a>
-            <a href="#pagos-qr" class="block py-2 text-slate-300 hover:text-brand-neon">Cobro QR</a>
-            <a href="#planes" class="block py-2 text-slate-300 hover:text-brand-neon">Planes</a>
-            <a href="#registro" class="block w-full text-center py-3 rounded-xl font-bold bg-brand-neon text-brand-dark mt-4">
-                Probar 14 Días Gratis
-            </a>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-neon/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-card border border-brand-border text-brand-neon text-xs sm:text-sm font-semibold mb-8 animate-pulse">
-                <span class="w-2 h-2 rounded-full bg-brand-neon"></span>
-                Especialmente Diseñado para Complejos Deportivos en Bolivia 🇧🇴
-            </div>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight max-w-5xl mx-auto mb-6">
-                Digitaliza y Llena tu Complejo Deportivo en <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon via-brand-lime to-brand-accent">Bolivia</span>
-            </h1>
-            <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                Automatiza tus reservas 24/7, cobra anticipadamente con <span class="text-white font-medium">QR pago rápido</span> y mantén tus canchas de fútbol, pádel o básquet siempre llenas sin descontrol por WhatsApp.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
-                <a href="#registro" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark hover:shadow-xl hover:shadow-brand-neon/30 transition-all text-lg transform hover:-translate-y-1">
-                    <i class="fa-solid fa-rocket mr-2"></i> Comenzar Demo Gratis
-                </a>
-                <a href="#simulador" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-brand-card border border-brand-border text-slate-200 hover:border-brand-neon/50 hover:text-white transition-all text-lg">
-                    Ver Como Funciona
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SIMULADOR INTERACTIVO DE CANCHAS Y TURNOS -->
-    <section id="simulador" class="py-20 bg-brand-dark relative border-t border-brand-border/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-neon mb-2">Simulador en Vivo</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Experimenta la Reserva Interactiva</h3>
-            </div>
-
-            <!-- Selector de Deporte -->
-            <div class="flex justify-center gap-3 mb-8 flex-wrap">
-                <button onclick="changeSport('futbol')" id="btn-futbol" class="sport-btn px-6 py-3 rounded-xl font-semibold bg-brand-neon text-brand-dark flex items-center gap-2 transition-all shadow-md">
-                    <i class="fa-solid fa-futbol text-lg"></i> Fútbol Sintético
-                </button>
-                <button onclick="changeSport('padel')" id="btn-padel" class="sport-btn px-6 py-3 rounded-xl font-semibold bg-brand-card border border-brand-border text-slate-300 hover:border-brand-neon flex items-center gap-2 transition-all">
-                    <i class="fa-solid fa-table-tennis-paddle-ball text-lg"></i> Pádel
-                </button>
-                <button onclick="changeSport('basquet')" id="btn-basquet" class="sport-btn px-6 py-3 rounded-xl font-semibold bg-brand-card border border-brand-border text-slate-300 hover:border-brand-neon flex items-center gap-2 transition-all">
-                    <i class="fa-solid fa-basketball text-lg"></i> Básquetbol
-                </button>
-            </div>
-
-            <div class="grid lg:grid-cols-12 gap-8 items-start">
-                <div class="lg:col-span-5 bg-brand-card border border-brand-border rounded-2xl p-6 relative overflow-hidden">
-                    <div class="flex justify-between items-center mb-4">
-                        <span id="court-title" class="font-bold text-white text-lg flex items-center gap-2">
-                            <i class="fa-solid fa-shield-halved text-brand-neon"></i> Cancha 1 - Sintético Master
-                        </span>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-brand-neon/20 text-brand-neon border border-brand-neon/30 font-medium">En Tiempo Real</span>
-                    </div>
-
-                    <div id="court-canvas-bg" class="w-full h-64 rounded-xl border-2 border-emerald-500/40 relative flex items-center justify-center transition-all duration-500 overflow-hidden bg-emerald-950/40">
-                        <div id="court-lines" class="absolute inset-0 flex items-center justify-center opacity-60"></div>
-                        <div id="court-status-badge" class="relative z-10 bg-brand-dark/90 backdrop-blur-md px-6 py-3 rounded-xl border border-brand-border text-center shadow-xl">
-                            <i id="court-icon" class="fa-solid fa-futbol text-3xl text-brand-neon mb-1"></i>
-                            <p id="court-status-text" class="text-sm font-bold text-white">Disponible para reservar</p>
-                            <p id="court-status-sub" class="text-xs text-slate-400">Selecciona un turno al lado</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7 bg-brand-card border border-brand-border rounded-2xl p-6">
-                    <div class="flex justify-between items-center mb-6">
-                        <h4 class="font-bold text-white text-lg">Horarios del Día (Hoy)</h4>
-                        <span class="text-sm text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> Agenda Abierta</span>
-                    </div>
-
-                    <div id="slots-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
-
-                    <div id="booking-feedback" class="mt-6 p-4 rounded-xl bg-brand-dark border border-brand-border hidden">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-xs text-slate-400">Turno seleccionado:</p>
-                                <p id="selected-time-str" class="font-bold text-brand-neon text-lg">18:00 - 19:00</p>
-                                <p id="selected-price-str" class="text-xs text-slate-300">Precio: Bs. 120 / hora</p>
-                            </div>
-                            <button onclick="triggerReservationSim()" class="px-5 py-2.5 rounded-xl bg-brand-neon text-brand-dark font-bold hover:bg-brand-neonHover transition-all text-sm shadow-lg">
-                                Simular Reserva por QR
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CALCULADORA DE INGRESOS -->
-    <section id="calculadora" class="py-20 bg-gradient-to-b from-brand-dark via-brand-card/30 to-brand-dark border-t border-brand-border/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-lime mb-2">Retorno de Inversión</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">¿Cuánto más puede ganar tu Complejo?</h3>
-            </div>
-
-            <div class="grid lg:grid-cols-12 gap-8 items-center bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-10 shadow-2xl">
-                <div class="lg:col-span-7 space-y-8">
-                    <div>
-                        <div class="flex justify-between items-center mb-2">
-                            <label class="text-sm font-semibold text-slate-300">Número de Canchas:</label>
-                            <span id="val-canchas" class="text-xl font-bold text-brand-neon">3 Canchas</span>
-                        </div>
-                        <input type="range" id="input-canchas" min="1" max="10" value="3" step="1" class="w-full h-2.5 bg-brand-dark rounded-lg appearance-none cursor-pointer accent-brand-neon" oninput="updateCalc()">
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between items-center mb-2">
-                            <label class="text-sm font-semibold text-slate-300">Precio Promedio por Hora (Bs):</label>
-                            <span id="val-precio" class="text-xl font-bold text-brand-lime">Bs. 120 / hr</span>
-                        </div>
-                        <input type="range" id="input-precio" min="50" max="300" value="120" step="10" class="w-full h-2.5 bg-brand-dark rounded-lg appearance-none cursor-pointer accent-brand-lime" oninput="updateCalc()">
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between items-center mb-2">
-                            <label class="text-sm font-semibold text-slate-300">Horas Alquiladas por Día:</label>
-                            <span id="val-horas" class="text-xl font-bold text-brand-accent">5 Horas / día</span>
-                        </div>
-                        <input type="range" id="input-horas" min="1" max="12" value="5" step="1" class="w-full h-2.5 bg-brand-dark rounded-lg appearance-none cursor-pointer accent-brand-accent" oninput="updateCalc()">
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5 bg-brand-dark rounded-2xl p-6 sm:p-8 border border-brand-border/80 flex flex-col justify-between text-center relative overflow-hidden">
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Estimación Mensual</span>
-                    <div class="my-6">
-                        <p class="text-slate-400 text-sm">Ingreso Bruto Mensual Estimado</p>
-                        <p id="res-ingreso-mensual" class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-lime mt-1">Bs. 54,000</p>
-                    </div>
-                    <a href="#registro" class="mt-8 w-full py-3 rounded-xl font-bold bg-brand-neon text-brand-dark hover:bg-brand-neonHover transition-all text-sm shadow-md">Optimizar Mi Complejo</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMULARIO DE REGISTRO / PRUEBA -->
-    <section id="registro" class="py-20 bg-brand-dark border-t border-brand-border/40 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-                <div class="text-center mb-8">
-                    <h3 class="text-3xl font-extrabold text-white">Comienza tu Prueba Gratuita de 14 Días</h3>
-                    <p class="text-slate-400 mt-2 text-sm">Los datos se registran directamente en la base de datos de tu backend.</p>
-                </div>
-
-                <form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Tu Nombre Completo</label>
-                            <input type="text" id="lead-name" required placeholder="Ej. Carlos Mendoza" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Teléfono / WhatsApp</label>
-                            <input type="tel" id="lead-phone" required placeholder="Ej. 77123456" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon text-sm">
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Correo Electrónico (Identificador)</label>
-                            <input type="email" id="lead-email" required placeholder="carlos@micomplejo.com" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nombre de tu Complejo</label>
-                            <input type="text" id="lead-complex" required placeholder="Ej. Complejo Golazo" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon text-sm">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Plan Seleccionado</label>
-                        <select id="lead-plan" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon text-sm">
-                            <option value="Pro">Plan Pro (Bs. 300 / mes)</option>
-                            <option value="Básico">Plan Básico (Bs. 150 / mes)</option>
-                            <option value="Enterprise">Plan Enterprise (Bs. 500 / mes)</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="w-full py-4 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark text-base hover:opacity-95 transition-all shadow-xl shadow-brand-neon/20">
-                        <i class="fa-solid fa-bolt mr-2"></i> Enviar Inscripción al Backend
-                    </button>
-                </form>
-
-                <!-- ÉXITO / ACCIÓN DE PRUEBA -->
-                <div id="success-message" class="hidden text-center py-8 space-y-6">
-                    <div class="w-16 h-16 bg-brand-neon/20 text-brand-neon border border-brand-neon/40 rounded-full flex items-center justify-center mx-auto text-3xl">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-
-                    <h4 class="text-2xl font-extrabold text-white">¡Inscripción Exitosa, <span id="res-user-name"></span>!</h4>
-                    <p class="text-slate-300 max-w-lg mx-auto text-sm">
-                        Los datos se registraron en Supabase con estado <strong class="text-amber-400">Inscrita</strong>.
-                    </p>
-
-                    <!-- BOTÓN DE PRUEBA DEL PUT (RÚBRICA) -->
-                    <div class="pt-2 max-w-md mx-auto bg-brand-dark p-6 rounded-2xl border border-brand-border space-y-3">
-                        <p class="text-xs text-slate-400">Demostración para la rúbrica (Cambiar a "Atendida"):</p>
-                        <button onclick="atenderInscripcionDesdeLanding()" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-brand-dark font-extrabold text-sm transition-all shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-user-check"></i> Ejecutar PUT (Marcar como "Atendida")
-                        </button>
-                        <p id="atender-status" class="text-xs text-slate-400 mt-2 font-medium"></p>
-                    </div>
-
-                    <button onclick="resetForm()" class="px-6 py-2.5 rounded-xl border border-brand-border text-xs text-slate-400 hover:text-white mt-4">
-                        Registrar otra prueba
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-brand-dark border-t border-brand-border/40 py-12 text-slate-500 text-xs text-center">
-        <p>© 2026 ReservaSport SaaS. Sistema de Gestión Deportiva.</p>
-    </footer>
-
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-
-        const sportsData = {
-            futbol: {
-                title: 'Cancha 1 - Sintético Master (Fútbol 7)',
-                icon: 'fa-futbol',
-                price: 120,
-                bgColor: 'bg-emerald-950/40',
-                borderColor: 'border-emerald-500/40'
-            },
-            padel: {
-                title: 'Cancha Pádel Cristal #2',
-                icon: 'fa-table-tennis-paddle-ball',
-                price: 100,
-                bgColor: 'bg-cyan-950/40',
-                borderColor: 'border-cyan-500/40'
-            },
-            basquet: {
-                title: 'Cancha Tabloncillo Básquet A',
-                icon: 'fa-basketball',
-                price: 90,
-                bgColor: 'bg-amber-950/40',
-                borderColor: 'border-amber-500/40'
-            }
-        };
-
-        let currentSport = 'futbol';
-        let currentSelectedSlot = null;
-        
-        const slotsList = [
-            { id: 1, time: '14:00 - 15:00', status: 'libre' },
-            { id: 2, time: '15:00 - 16:00', status: 'ocupado' },
-            { id: 3, time: '16:00 - 17:00', status: 'libre' },
-            { id: 4, time: '18:00 - 19:00', status: 'libre' }
-        ];
-
-        function changeSport(sportKey) {
-            currentSport = sportKey;
-            
-            document.querySelectorAll('.sport-btn').forEach(btn => {
-                btn.className = 'sport-btn px-6 py-3 rounded-xl font-semibold bg-brand-card border border-brand-border text-slate-300 hover:border-brand-neon flex items-center gap-2 transition-all';
-            });
-            document.getElementById(`btn-${sportKey}`).className = 'sport-btn px-6 py-3 rounded-xl font-semibold bg-brand-neon text-brand-dark flex items-center gap-2 transition-all shadow-md';
-
-            const data = sportsData[sportKey];
-            document.getElementById('court-title').innerHTML = `<i class="fa-solid ${data.icon} text-brand-neon"></i> ${data.title}`;
-            document.getElementById('court-icon').className = `fa-solid ${data.icon} text-3xl text-brand-neon mb-1`;
-            
-            const canvasBg = document.getElementById('court-canvas-bg');
-            canvasBg.className = `w-full h-64 rounded-xl border-2 ${data.borderColor} relative flex items-center justify-center transition-all duration-500 overflow-hidden ${data.bgColor}`;
-            
-            renderSlots();
-        }
-
-        function renderSlots() {
-            const container = document.getElementById('slots-grid');
-            container.innerHTML = '';
-            slotsList.forEach(slot => {
-                const card = document.createElement('button');
-                card.disabled = slot.status === 'ocupado';
-                card.className = `p-3 rounded-xl border text-xs font-medium text-center ${slot.status === 'ocupado' ? 'bg-red-500/10 text-red-400 border-red-500/30' : 'bg-brand-dark border-brand-border text-white hover:border-brand-neon'}`;
-                card.innerHTML = `<span>${slot.time}</span><span class="block text-[9px] uppercase font-bold ${slot.status === 'ocupado' ? 'text-red-400' : 'text-brand-neon'}">${slot.status}</span>`;
-                container.appendChild(card);
-            });
-        }
-        changeSport('futbol');
-
-        function updateCalc() {
-            const canchas = document.getElementById('input-canchas').value;
-            const precio = document.getElementById('input-precio').value;
-            const horas = document.getElementById('input-horas').value;
-            document.getElementById('val-canchas').innerText = `${canchas} Canchas`;
-            document.getElementById('val-precio').innerText = `Bs. ${precio} / hr`;
-            document.getElementById('val-horas').innerText = `${horas} Horas / día`;
-            document.getElementById('res-ingreso-mensual').innerText = `Bs. ${(canchas * precio * horas * 30).toLocaleString('es-BO')}`;
-        }
-
-        // 1. PETICIÓN POST DESDE LA LANDING HACIA TU API EN .NET
-        async function handleFormSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('lead-name').value;
-            const phone = document.getElementById('lead-phone').value;
-            const email = document.getElementById('lead-email').value;
-            const complex = document.getElementById('lead-complex').value;
-            const plan = document.getElementById('lead-plan').value;
-
-            // URL ACTUALIZADA DE TU DEV TUNNEL
-            const API_URL = "https://c1t9b7zw-7035.brs.devtunnels.ms/api/Suscripciones";
-
-            try {
-                await fetch(`${API_URL}/inscribir`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ nombre: name, telefono: phone, correo: email, nombreComplejo: complex, plan: plan })
-                });
-            } catch (err) {
-                console.log("Modo offline o error de red");
-            }
-
+        if (response.ok) {
             document.getElementById('res-user-name').innerText = name;
             document.getElementById('lead-form').classList.add('hidden');
             document.getElementById('success-message').classList.remove('hidden');
+        } else {
+            const error = await response.json();
+            alert('Error: ' + (error.mensaje || 'No se pudo procesar la inscripción'));
         }
+    } catch (err) {
+        console.error("Error:", err);
+        alert('Error de conexión con el backend. Asegúrate de que el servidor esté corriendo.');
+    }
+}
 
-        // 2. PETICIÓN PUT DESDE LA LANDING PARA ATENDER INSCRIPCIÓN
-        async function atenderInscripcionDesdeLanding() {
-            const email = document.getElementById('lead-email').value;
-            const statusText = document.getElementById('atender-status');
-            
-            // URL ACTUALIZADA DE TU DEV TUNNEL
-            const API_URL = "https://c1t9b7zw-7035.brs.devtunnels.ms/api/Suscripciones";
+// 2. PETICIÓN PUT DESDE LA LANDING PARA ATENDER INSCRIPCIÓN
+async function atenderInscripcionDesdeLanding() {
+    const email = document.getElementById('lead-email').value;
+    const statusText = document.getElementById('atender-status');
+    
+    // URL PÚBLICA DE TU API (localtunnel)
+    const API_URL = "https://olive-mice-chew.loca.lt/api/Suscripciones";
 
-            statusText.innerText = "Enviando solicitud PUT...";
-            try {
-                const res = await fetch(`${API_URL}/atender?contacto=${encodeURIComponent(email)}`, { method: 'PUT' });
-                if (res.ok) {
-                    statusText.className = "text-xs text-brand-neon font-bold mt-2";
-                    statusText.innerText = "¡Éxito! Estado actualizado a 'Atendida' en la base de datos.";
-                } else {
-                    statusText.className = "text-xs text-red-400 font-bold mt-2";
-                    statusText.innerText = "No se encontró el registro en Supabase.";
-                }
-            } catch (e) {
-                statusText.className = "text-xs text-red-400 mt-2";
-                statusText.innerText = "Error: Verifica tu Dev Tunnel.";
-            }
+    statusText.innerText = "Enviando solicitud PUT...";
+    try {
+        const res = await fetch(`${API_URL}/atender?contacto=${encodeURIComponent(email)}`, { method: 'PUT' });
+        if (res.ok) {
+            statusText.className = "text-xs text-brand-neon font-bold mt-2";
+            statusText.innerText = "¡Éxito! Estado actualizado a 'Atendida' en la base de datos.";
+        } else {
+            statusText.className = "text-xs text-red-400 font-bold mt-2";
+            statusText.innerText = "No se encontró el registro en Supabase.";
         }
-
-        function resetForm() {
-            document.getElementById('lead-form').reset();
-            document.getElementById('lead-form').classList.remove('hidden');
-            document.getElementById('success-message').classList.add('hidden');
-            document.getElementById('atender-status').innerText = '';
-        }
-    </script>
-</body>
-</html>
+    } catch (e) {
+        statusText.className = "text-xs text-red-400 mt-2";
+        statusText.innerText = "Error: Verifica que el servidor esté corriendo.";
+    }
+}
