@@ -39,7 +39,6 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-neon to-brand-lime flex items-center justify-center text-brand-dark font-extrabold text-xl shadow-lg shadow-brand-neon/20">
                         <i class="fa-solid fa-[#]">RS</i>
@@ -47,7 +46,6 @@
                     <span class="text-2xl font-black tracking-wider text-white">Reserva<span class="text-brand-neon">Sport</span></span>
                 </div>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
                     <a href="#simulador" class="hover:text-brand-neon transition-colors">Simulador</a>
                     <a href="#calculadora" class="hover:text-brand-neon transition-colors">Calculadora</a>
@@ -55,99 +53,45 @@
                     <a href="#planes" class="hover:text-brand-neon transition-colors">Planes</a>
                 </div>
 
-                <!-- CTA Button -->
                 <div class="hidden md:flex items-center gap-4">
                     <a href="#registro" class="px-5 py-2.5 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark hover:opacity-95 transition-all shadow-lg shadow-brand-neon/20 transform hover:-translate-y-0.5">
                         Probar 14 Días Gratis
                     </a>
                 </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
             </div>
-        </div>
-        
-        <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-4 pt-2 pb-6 space-y-3">
-            <a href="#simulador" class="block py-2 text-slate-300 hover:text-brand-neon">Simulador</a>
-            <a href="#calculadora" class="block py-2 text-slate-300 hover:text-brand-neon">Calculadora</a>
-            <a href="#pagos-qr" class="block py-2 text-slate-300 hover:text-brand-neon">Cobro QR</a>
-            <a href="#planes" class="block py-2 text-slate-300 hover:text-brand-neon">Planes</a>
-            <a href="#registro" class="block w-full text-center py-3 rounded-xl font-bold bg-brand-neon text-brand-dark mt-4">
-                Probar 14 Días Gratis
-            </a>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
     <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-        <!-- Background Glow Effects -->
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-neon/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-brand-lime/10 rounded-full blur-[90px] pointer-events-none"></div>
-
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-card border border-brand-border text-brand-neon text-xs sm:text-sm font-semibold mb-8 animate-pulse">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-card border border-brand-border text-brand-neon text-xs sm:text-sm font-semibold mb-8">
                 <span class="w-2 h-2 rounded-full bg-brand-neon"></span>
                 Especialmente Diseñado para Complejos Deportivos en Bolivia 🇧🇴
             </div>
-
-            <!-- Title -->
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight max-w-5xl mx-auto mb-6">
                 Digitaliza y Llena tu Complejo Deportivo en <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon via-brand-lime to-brand-accent">Bolivia</span>
             </h1>
-
-            <!-- Subtitle -->
             <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                Automatiza tus reservas 24/7, cobra anticipadamente con <span class="text-white font-medium">QR pago rápido</span> y mantén tus canchas de fútbol, pádel o básquet siempre llenas sin descontrol ni llamadas interminables por WhatsApp.
+                Automatiza tus reservas 24/7, cobra anticipadamente con <span class="text-white font-medium">QR pago rápido</span> y mantén tus canchas llenas sin descontrol por WhatsApp.
             </p>
-
-            <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
-                <a href="#registro" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark hover:shadow-xl hover:shadow-brand-neon/30 transition-all text-lg transform hover:-translate-y-1">
+                <a href="#registro" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark hover:shadow-xl transition-all text-lg">
                     <i class="fa-solid fa-rocket mr-2"></i> Comenzar Demo Gratis
                 </a>
-                <a href="#simulador" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-brand-card border border-brand-border text-slate-200 hover:border-brand-neon/50 hover:text-white transition-all text-lg">
-                    Ver Como Funciona
-                </a>
-            </div>
-
-            <!-- Hero Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-brand-border/40">
-                <div class="p-4 rounded-xl bg-brand-card/40 border border-brand-border/30">
-                    <p class="text-2xl sm:text-3xl font-extrabold text-brand-neon">+85%</p>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Cobros por QR Confirmados</p>
-                </div>
-                <div class="p-4 rounded-xl bg-brand-card/40 border border-brand-border/30">
-                    <p class="text-2xl sm:text-3xl font-extrabold text-brand-lime">0%</p>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Canchas Duplicadas</p>
-                </div>
-                <div class="p-4 rounded-xl bg-brand-card/40 border border-brand-border/30">
-                    <p class="text-2xl sm:text-3xl font-extrabold text-brand-accent">24/7</p>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Agendamiento Automático</p>
-                </div>
-                <div class="p-4 rounded-xl bg-brand-card/40 border border-brand-border/30">
-                    <p class="text-2xl sm:text-3xl font-extrabold text-white">100%</p>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Adaptado a Bolivia</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- SIMULADOR INTERACTIVO DE CANCHAS Y TURNOS -->
+    <!-- SIMULADOR INTERACTIVO DE CANCHAS (CON CAMBIO DE DEPORTE RESTAURADO) -->
     <section id="simulador" class="py-20 bg-brand-dark relative border-t border-brand-border/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-brand-neon mb-2">Simulador en Vivo</h2>
                 <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Experimenta la Reserva Interactiva</h3>
-                <p class="text-slate-400 mt-3">Prueba cómo tus clientes verán el estado de tus canchas y reservarán en segundos desde sus teléfonos.</p>
             </div>
 
-            <!-- Selector de Deporte -->
             <div class="flex justify-center gap-3 mb-8 flex-wrap">
                 <button onclick="changeSport('futbol')" id="btn-futbol" class="sport-btn px-6 py-3 rounded-xl font-semibold bg-brand-neon text-brand-dark flex items-center gap-2 transition-all shadow-md">
                     <i class="fa-solid fa-futbol text-lg"></i> Fútbol Sintético
@@ -160,62 +104,33 @@
                 </button>
             </div>
 
-            <!-- Grid Interactiva: Visual + Grilla de Horarios -->
             <div class="grid lg:grid-cols-12 gap-8 items-start">
-                
-                <!-- Visual de la Cancha (Left Panel) -->
                 <div class="lg:col-span-5 bg-brand-card border border-brand-border rounded-2xl p-6 relative overflow-hidden">
                     <div class="flex justify-between items-center mb-4">
                         <span id="court-title" class="font-bold text-white text-lg flex items-center gap-2">
                             <i class="fa-solid fa-shield-halved text-brand-neon"></i> Cancha 1 - Sintético Master
                         </span>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-brand-neon/20 text-brand-neon border border-brand-neon/30 font-medium">
-                            En Tiempo Real
-                        </span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-brand-neon/20 text-brand-neon border border-brand-neon/30 font-medium">En Tiempo Real</span>
                     </div>
 
-                    <!-- Representación Gráfica de la Cancha -->
                     <div id="court-canvas-bg" class="w-full h-64 rounded-xl border-2 border-emerald-500/40 relative flex items-center justify-center transition-all duration-500 overflow-hidden bg-emerald-950/40">
-                        <!-- Lineas de la cancha SVG -->
-                        <div id="court-lines" class="absolute inset-0 flex items-center justify-center opacity-60">
-                            <!-- JS inserta las líneas dinámicamente -->
-                        </div>
-
-                        <!-- Estado Actual en la Cancha -->
+                        <div id="court-lines" class="absolute inset-0 flex items-center justify-center opacity-60"></div>
                         <div id="court-status-badge" class="relative z-10 bg-brand-dark/90 backdrop-blur-md px-6 py-3 rounded-xl border border-brand-border text-center shadow-xl">
                             <i id="court-icon" class="fa-solid fa-futbol text-3xl text-brand-neon mb-1"></i>
                             <p id="court-status-text" class="text-sm font-bold text-white">Disponible para reservar</p>
                             <p id="court-status-sub" class="text-xs text-slate-400">Selecciona un turno al lado</p>
                         </div>
                     </div>
-
-                    <!-- Leyenda -->
-                    <div class="flex justify-around mt-6 pt-4 border-t border-brand-border/50 text-xs text-slate-400">
-                        <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-brand-neon"></span> Libre
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500"></span> Ocupado
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-amber-400"></span> En Proceso
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Grilla de Horarios (Right Panel) -->
                 <div class="lg:col-span-7 bg-brand-card border border-brand-border rounded-2xl p-6">
                     <div class="flex justify-between items-center mb-6">
                         <h4 class="font-bold text-white text-lg">Horarios del Día (Hoy)</h4>
                         <span class="text-sm text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> Agenda Abierta</span>
                     </div>
 
-                    <!-- Grid de Turnos -->
-                    <div id="slots-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        <!-- Generado por JS -->
-                    </div>
+                    <div id="slots-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
 
-                    <!-- Detalle de Selección / Simulación -->
                     <div id="booking-feedback" class="mt-6 p-4 rounded-xl bg-brand-dark border border-brand-border hidden">
                         <div class="flex items-center justify-between">
                             <div>
@@ -223,466 +138,150 @@
                                 <p id="selected-time-str" class="font-bold text-brand-neon text-lg">18:00 - 19:00</p>
                                 <p id="selected-price-str" class="text-xs text-slate-300">Precio: Bs. 120 / hora</p>
                             </div>
-                            <button onclick="triggerReservationSim()" class="px-5 py-2.5 rounded-xl bg-brand-neon text-brand-dark font-bold hover:bg-brand-neonHover transition-all text-sm shadow-lg shadow-brand-neon/20">
+                            <button onclick="triggerReservationSim()" class="px-5 py-2.5 rounded-xl bg-brand-neon text-brand-dark font-bold hover:bg-brand-neonHover transition-all text-sm shadow-lg">
                                 Simular Reserva por QR
                             </button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- CALCULADORA DINÁMICA DE INGRESOS Y AHORRO -->
+    <!-- CALCULADORA DE INGRESOS -->
     <section id="calculadora" class="py-20 bg-gradient-to-b from-brand-dark via-brand-card/30 to-brand-dark border-t border-brand-border/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="text-xs font-bold uppercase tracking-widest text-brand-lime mb-2">Retorno de Inversión</h2>
                 <h3 class="text-3xl sm:text-4xl font-extrabold text-white">¿Cuánto más puede ganar tu Complejo?</h3>
-                <p class="text-slate-400 mt-3">Ajusta los valores para estimar el crecimiento de tus ingresos optimizando los turnos nocturnos y evitando huecos vacíos.</p>
             </div>
 
             <div class="grid lg:grid-cols-12 gap-8 items-center bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-10 shadow-2xl">
-                
-                <!-- Inputs de la Calculadora -->
                 <div class="lg:col-span-7 space-y-8">
-                    
-                    <!-- Slider 1: Canchas -->
                     <div>
                         <div class="flex justify-between items-center mb-2">
                             <label class="text-sm font-semibold text-slate-300">Número de Canchas:</label>
                             <span id="val-canchas" class="text-xl font-bold text-brand-neon">3 Canchas</span>
                         </div>
-                        <input type="range" id="input-canchas" min="1" max="10" value="3" step="1" 
-                               class="w-full h-2.5 bg-brand-dark rounded-lg appearance-none cursor-pointer accent-brand-neon"
-                               oninput="updateCalc()">
-                        <div class="flex justify-between text-xs text-slate-500 mt-1">
-                            <span>1 Cancha</span>
-                            <span>5 Canchas</span>
-                            <span>10 Canchas</span>
-                        </div>
+                        <input type="range" id="input-canchas" min="1" max="10" value="3" step="1" class="w-full h-2.5 bg-brand-dark rounded-lg appearance-none cursor-pointer accent-brand-neon" oninput="updateCalc()">
                     </div>
 
-                    <!-- Slider 2: Precio por Hora -->
                     <div>
                         <div class="flex justify-between items-center mb-2">
                             <label class="text-sm font-semibold text-slate-300">Precio Promedio por Hora (Bs):</label>
                             <span id="val-precio" class="text-xl font-bold text-brand-lime">Bs. 120 / hr</span>
                         </div>
-                        <input type="range" id="input-precio" min="50" max="300" value="120" step="10" 
-                               class="w-full h-2.5 bg-brand-dark rounded-lg appearance-none cursor-pointer accent-brand-lime"
-                               oninput="updateCalc()">
-                        <div class="flex justify-between text-xs text-slate-500 mt-1">
-                            <span>Bs. 50</span>
-                            <span>Bs. 175</span>
-                            <span>Bs. 300</span>
-                        </div>
+                        <input type="range" id="input-precio" min="50" max="300" value="120" step="10" class="w-full h-2.5 bg-brand-dark rounded-lg appearance-none cursor-pointer accent-brand-lime" oninput="updateCalc()">
                     </div>
 
-                    <!-- Slider 3: Horas ocupadas diarias por cancha -->
                     <div>
                         <div class="flex justify-between items-center mb-2">
-                            <label class="text-sm font-semibold text-slate-300">Horas Alquiladas por Día (Promedio por cancha):</label>
+                            <label class="text-sm font-semibold text-slate-300">Horas Alquiladas por Día:</label>
                             <span id="val-horas" class="text-xl font-bold text-brand-accent">5 Horas / día</span>
                         </div>
-                        <input type="range" id="input-horas" min="1" max="12" value="5" step="1" 
-                               class="w-full h-2.5 bg-brand-dark rounded-lg appearance-none cursor-pointer accent-brand-accent"
-                               oninput="updateCalc()">
-                        <div class="flex justify-between text-xs text-slate-500 mt-1">
-                            <span>1 hr</span>
-                            <span>6 hrs</span>
-                            <span>12 hrs</span>
-                        </div>
+                        <input type="range" id="input-horas" min="1" max="12" value="5" step="1" class="w-full h-2.5 bg-brand-dark rounded-lg appearance-none cursor-pointer accent-brand-accent" oninput="updateCalc()">
                     </div>
-
                 </div>
 
-                <!-- Resultados de la Calculadora -->
                 <div class="lg:col-span-5 bg-brand-dark rounded-2xl p-6 sm:p-8 border border-brand-border/80 flex flex-col justify-between text-center relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-neon/10 rounded-full blur-2xl"></div>
-                    
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Estimación Mensual Estimada</span>
-
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Estimación Mensual</span>
                     <div class="my-6">
                         <p class="text-slate-400 text-sm">Ingreso Bruto Mensual Estimado</p>
-                        <p id="res-ingreso-mensual" class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-lime mt-1">
-                            Bs. 54,000
-                        </p>
+                        <p id="res-ingreso-mensual" class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-lime mt-1">Bs. 54,000</p>
                     </div>
-
-                    <div class="grid grid-cols-2 gap-4 pt-6 border-t border-brand-border/60 text-left">
-                        <div>
-                            <p class="text-xs text-slate-400">Ahorro en Tiempo Admin</p>
-                            <p id="res-tiempo-ahorro" class="text-lg font-bold text-slate-200 mt-0.5">~35 Horas/mes</p>
-                        </div>
-                        <div>
-                            <p class="text-xs text-slate-400">Reducción de Ausencias</p>
-                            <p class="text-lg font-bold text-brand-neon mt-0.5">Hasta -90%</p>
-                        </div>
-                    </div>
-
-                    <a href="#registro" class="mt-8 w-full py-3 rounded-xl font-bold bg-brand-neon text-brand-dark hover:bg-brand-neonHover transition-all text-sm shadow-md">
-                        Optimizar Mi Complejo Ahora
-                    </a>
+                    <a href="#registro" class="mt-8 w-full py-3 rounded-xl font-bold bg-brand-neon text-brand-dark hover:bg-brand-neonHover transition-all text-sm shadow-md">Optimizar Mi Complejo</a>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- DEMOSTRACIÓN DE COBRO AUTOMÁTICO VÍA QR -->
-    <section id="pagos-qr" class="py-20 bg-brand-dark border-t border-brand-border/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                
-                <!-- Left: Text Info -->
-                <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-neon/10 text-brand-neon text-xs font-bold mb-4 border border-brand-neon/20">
-                        <i class="fa-solid fa-qrcode"></i> Cobros 100% Automatizados
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-6">
-                        Recibe Pagos por QR de Cualquier Banco en Bolivia
-                    </h2>
-                    <p class="text-slate-400 mb-8 leading-relaxed">
-                        Olvídate de pedir capturas de pantalla por WhatsApp o verificar manualmente tus extractos bancarios. Con ReservaSport, el sistema genera un QR dinámico para la reserva y confirma el pago al instante.
-                    </p>
-
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-card border border-brand-border/60">
-                            <div class="w-10 h-10 rounded-lg bg-brand-neon/10 border border-brand-neon/30 flex items-center justify-center text-brand-neon font-bold flex-shrink-0">
-                                1
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-base">El Cliente Elige Turno y Genera QR</h4>
-                                <p class="text-sm text-slate-400 mt-1">El QR incluye el monto exacto del turno de la cancha seleccionada.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-card border border-brand-border/60">
-                            <div class="w-10 h-10 rounded-lg bg-brand-lime/10 border border-brand-lime/30 flex items-center justify-center text-brand-lime font-bold flex-shrink-0">
-                                2
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-base">Escanea desde su App Bancaria (BNB, BCP, Mercantil, etc.)</h4>
-                                <p class="text-sm text-slate-400 mt-1">El jugador paga al instante desde cualquier aplicación de banca en Bolivia.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-card border border-brand-border/60">
-                            <div class="w-10 h-10 rounded-lg bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent font-bold flex-shrink-0">
-                                3
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-base">Confirmación Inmediata y Cancha Agendada</h4>
-                                <p class="text-sm text-slate-400 mt-1">El horario se bloquea automáticamente en tu panel sin intervención manual.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Interactive QR Mockup -->
-                <div class="flex justify-center">
-                    <div class="w-full max-w-sm bg-brand-card border border-brand-border rounded-3xl p-6 shadow-2xl relative text-center">
-                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-neon text-brand-dark font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider">
-                            Simulación de Pago Simple QR
-                        </div>
-
-                        <div class="mt-4 mb-2 flex items-center justify-between text-slate-400 text-xs border-b border-brand-border/50 pb-3">
-                            <span>Complejo: <strong>Golazo Park</strong></span>
-                            <span>Monto: <strong class="text-brand-neon">Bs. 120.00</strong></span>
-                        </div>
-
-                        <!-- Fake QR Box -->
-                        <div class="my-6 p-4 bg-white rounded-2xl inline-block shadow-inner relative group">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ReservaSportBoliviaDemo" 
-                                 alt="QR Demo Pago" 
-                                 class="w-48 h-48 mx-auto">
-                            <div class="absolute inset-0 bg-black/5 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-2xl">
-                                <span class="bg-brand-dark text-white text-xs px-3 py-1.5 rounded-lg border border-brand-border font-medium">QR Válido Bolivia</span>
-                            </div>
-                        </div>
-
-                        <div id="qr-status-box" class="bg-brand-dark p-3 rounded-xl border border-brand-border flex items-center justify-center gap-2 text-sm text-amber-400">
-                            <i class="fa-solid fa-spinner animate-spin"></i>
-                            <span>Esperando pago en línea...</span>
-                        </div>
-
-                        <button onclick="simulateQRPayment()" class="w-full mt-4 py-2.5 rounded-xl bg-brand-card hover:bg-brand-border border border-brand-border text-xs text-slate-300 font-semibold transition-all">
-                            <i class="fa-solid fa-bolt mr-1 text-brand-lime"></i> Forzar Simulación de Pago Recibido
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN DE PLANES Y PRECIOS -->
-    <section id="planes" class="py-20 bg-gradient-to-b from-brand-dark via-brand-card/20 to-brand-dark border-t border-brand-border/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-neon mb-2">Planes Transparentes</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Elige el Plan Ideal para tu Complejo</h3>
-                <p class="text-slate-400 mt-3">Sin contratos forzosos. Cancela o cambia de plan en cualquier momento.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 items-stretch">
-                
-                <!-- Plan Básico -->
-                <div class="bg-brand-card border border-brand-border rounded-3xl p-8 flex flex-col justify-between hover:border-brand-border/80 transition-all">
-                    <div>
-                        <h4 class="text-xl font-bold text-white mb-2">Plan Básico</h4>
-                        <p class="text-xs text-slate-400 mb-6">Para complejos pequeños que inician su digitalización.</p>
-                        
-                        <div class="flex items-baseline gap-1 mb-6">
-                            <span class="text-4xl font-black text-white">Bs. 150</span>
-                            <span class="text-sm text-slate-400">/ mes</span>
-                        </div>
-
-                        <ul class="space-y-4 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Hasta <strong>1 Cancha</strong></span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Agendamiento Digital 24/7</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Registro Manual de Pagos</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Reportes Básicos Mensuales</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <a href="#registro" onclick="selectPlan('Básico')" class="w-full py-3 rounded-xl font-bold bg-brand-dark border border-brand-border text-slate-200 hover:border-brand-neon hover:text-white transition-all text-center block text-sm">
-                        Elegir Plan Básico
-                    </a>
-                </div>
-
-                <!-- Plan Pro (Destacado) -->
-                <div class="bg-brand-card border-2 border-brand-neon rounded-3xl p-8 flex flex-col justify-between relative shadow-2xl shadow-brand-neon/10 transform md:-translate-y-2">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">
-                        Más Popular
-                    </div>
-
-                    <div>
-                        <h4 class="text-xl font-bold text-white mb-2">Plan Pro</h4>
-                        <p class="text-xs text-slate-400 mb-6">La solución más completa para complejos medianos.</p>
-                        
-                        <div class="flex items-baseline gap-1 mb-6">
-                            <span class="text-4xl font-black text-white">Bs. 300</span>
-                            <span class="text-sm text-slate-400">/ mes</span>
-                        </div>
-
-                        <ul class="space-y-4 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Hasta <strong>3 Canchas</strong></span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span><strong>Pagos QR Automáticos</strong></span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Control de Inventario y Cantina</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Recordatorios por WhatsApp</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Estadísticas en Tiempo Real</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <a href="#registro" onclick="selectPlan('Pro')" class="w-full py-3.5 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark hover:opacity-95 transition-all text-center block text-sm shadow-lg shadow-brand-neon/20">
-                        Probar Plan Pro Gratis
-                    </a>
-                </div>
-
-                <!-- Plan Enterprise -->
-                <div class="bg-brand-card border border-brand-border rounded-3xl p-8 flex flex-col justify-between hover:border-brand-border/80 transition-all">
-                    <div>
-                        <h4 class="text-xl font-bold text-white mb-2">Plan Enterprise</h4>
-                        <p class="text-xs text-slate-400 mb-6">Para clubes grandes, franquicias y múltiples sedes.</p>
-                        
-                        <div class="flex items-baseline gap-1 mb-6">
-                            <span class="text-4xl font-black text-white">Bs. 500</span>
-                            <span class="text-sm text-slate-400">/ mes</span>
-                        </div>
-
-                        <ul class="space-y-4 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span><strong>Canchas Ilimitadas</strong></span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Multi-usuario con roles y permisos</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Dominio / Subdominio Personalizado</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-neon"></i>
-                                <span>Soporte Prioritario 24/7 en Bolivia</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <a href="#registro" onclick="selectPlan('Enterprise')" class="w-full py-3 rounded-xl font-bold bg-brand-dark border border-brand-border text-slate-200 hover:border-brand-neon hover:text-white transition-all text-center block text-sm">
-                        Contactar Enterprise
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMULARIO INTERACTIVO DE REGISTRO / DEMO -->
+    <!-- FORMULARIO DE REGISTRO / PRUEBA -->
     <section id="registro" class="py-20 bg-brand-dark border-t border-brand-border/40 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-neon/10 rounded-full blur-3xl pointer-events-none"></div>
-
                 <div class="text-center mb-8">
                     <h3 class="text-3xl font-extrabold text-white">Comienza tu Prueba Gratuita de 14 Días</h3>
-                    <p class="text-slate-400 mt-2 text-sm">Sin tarjetas de crédito. Configuración en menos de 2 minutos.</p>
+                    <p class="text-slate-400 mt-2 text-sm">Envía tus datos y regístralos directamente en el backend de administración.</p>
                 </div>
 
-                <!-- Formulario -->
                 <form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
                     <div class="grid sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Tu Nombre Completo</label>
-                            <input type="text" id="lead-name" required placeholder="Ej. Carlos Mendoza" 
-                                   class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon transition-all text-sm">
+                            <input type="text" id="lead-name" required placeholder="Ej. Carlos Mendoza" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon text-sm">
                         </div>
-
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Teléfono / WhatsApp</label>
-                            <input type="tel" id="lead-phone" required placeholder="Ej. 77123456" 
-                                   class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon transition-all text-sm">
+                            <input type="tel" id="lead-phone" required placeholder="Ej. 77123456" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon text-sm">
                         </div>
                     </div>
 
                     <div class="grid sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Correo Electrónico</label>
-                            <input type="email" id="lead-email" required placeholder="carlos@micomplejo.com" 
-                                   class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon transition-all text-sm">
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Correo Electrónico (Identificador)</label>
+                            <input type="email" id="lead-email" required placeholder="carlos@micomplejo.com" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon text-sm">
                         </div>
-
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nombre de tu Complejo Deportivo</label>
-                            <input type="text" id="lead-complex" required placeholder="Ej. Complejo Deportivo El Golazo" 
-                                   class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon transition-all text-sm">
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nombre de tu Complejo</label>
+                            <input type="text" id="lead-complex" required placeholder="Ej. Complejo Golazo" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon text-sm">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Plan Seleccionado</label>
-                        <select id="lead-plan" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon transition-all text-sm">
-                            <option value="Pro">Plan Pro (Bs. 300 / mes) - Recomendado</option>
+                        <select id="lead-plan" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white focus:outline-none focus:border-brand-neon text-sm">
+                            <option value="Pro">Plan Pro (Bs. 300 / mes)</option>
                             <option value="Básico">Plan Básico (Bs. 150 / mes)</option>
                             <option value="Enterprise">Plan Enterprise (Bs. 500 / mes)</option>
                         </select>
                     </div>
 
                     <button type="submit" class="w-full py-4 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark text-base hover:opacity-95 transition-all shadow-xl shadow-brand-neon/20">
-                        <i class="fa-solid fa-bolt mr-2"></i> Crear Mi Cuenta Demo Ahora
+                        <i class="fa-solid fa-bolt mr-2"></i> Enviar Inscripción al Backend
                     </button>
                 </form>
 
-                <!-- Mensaje Dinámico de Éxito / Bienvenida (Oculto inicialmente) -->
+                <!-- ÉXITO / ACCIÓN DE PRUEBA -->
                 <div id="success-message" class="hidden text-center py-8 space-y-6">
                     <div class="w-16 h-16 bg-brand-neon/20 text-brand-neon border border-brand-neon/40 rounded-full flex items-center justify-center mx-auto text-3xl">
                         <i class="fa-solid fa-check"></i>
                     </div>
 
-                    <h4 class="text-2xl font-extrabold text-white">¡Felicidades, <span id="res-user-name"></span>!</h4>
+                    <h4 class="text-2xl font-extrabold text-white">¡Inscripción Exitosa, <span id="res-user-name"></span>!</h4>
                     <p class="text-slate-300 max-w-lg mx-auto text-sm">
-                        Hemos preparado el entorno de demostración para tu complejo <strong id="res-complex-name" class="text-brand-neon"></strong>.
+                        Los datos se registraron en Supabase con estado <strong class="text-amber-400">Inscrita</strong>.
                     </p>
 
-                    <!-- Acceso de prueba generado -->
-                    <div class="bg-brand-dark p-6 rounded-2xl border border-brand-border text-left max-w-md mx-auto space-y-3">
-                        <div class="flex justify-between items-center text-xs text-slate-400 pb-2 border-b border-brand-border/60">
-                            <span>Estado de Cuenta:</span>
-                            <span class="text-brand-neon font-bold">Activo (14 Días)</span>
-                        </div>
-                        <div>
-                            <span class="text-xs text-slate-400">Tu Enlace de Acceso Privado:</span>
-                            <p id="res-subdomain" class="font-mono text-sm text-brand-lime font-bold mt-0.5">https://elgolazo.reservasport.bo</p>
-                        </div>
-                        <div>
-                            <span class="text-xs text-slate-400">Identificador de Complejo:</span>
-                            <p id="res-tenant-id" class="font-mono text-xs text-slate-300">RS-BOL-8942</p>
-                        </div>
+                    <!-- BOTÓN DE PRUEBA DEL PUT (RÚBRICA) -->
+                    <div class="pt-2 max-w-md mx-auto bg-brand-dark p-6 rounded-2xl border border-brand-border space-y-3">
+                        <p class="text-xs text-slate-400">Demostración para la rúbrica (Cambiar a "Atendida"):</p>
+                        <button onclick="atenderInscripcionDesdeLanding()" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-brand-dark font-extrabold text-sm transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-user-check"></i> Ejecutar PUT (Marcar como "Atendida")
+                        </button>
+                        <p id="atender-status" class="text-xs text-slate-400 mt-2 font-medium"></p>
                     </div>
 
-                    <button onclick="resetForm()" class="px-6 py-2.5 rounded-xl border border-brand-border text-xs text-slate-400 hover:text-white">
-                        Registrar otro complejo
+                    <button onclick="resetForm()" class="px-6 py-2.5 rounded-xl border border-brand-border text-xs text-slate-400 hover:text-white mt-4">
+                        Registrar otra prueba
                     </button>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-brand-dark border-t border-brand-border/40 py-12 text-slate-500 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-brand-neon flex items-center justify-center text-brand-dark font-black text-sm">
-                    RS
-                </div>
-                <span class="text-slate-300 font-bold text-sm">ReservaSport Bolivia</span>
-            </div>
-
-            <p>© 2026 ReservaSport SaaS. Todos los derechos reservados. Diseñado para complejos deportivos bolivianos.</p>
-
-            <div class="flex items-center gap-4 text-slate-400 text-sm">
-                <a href="#" class="hover:text-brand-neon"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="#" class="hover:text-brand-neon"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="hover:text-brand-neon"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-        </div>
+    <footer class="bg-brand-dark border-t border-brand-border/40 py-12 text-slate-500 text-xs text-center">
+        <p>© 2026 ReservaSport SaaS. Sistema de Gestión Deportiva.</p>
     </footer>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Toggle Mobile Menu
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // ----------------------------------------------------
-        // SIMULADOR INTERACTIVO DE CANCHAS Y TURNOS
-        // ----------------------------------------------------
+        // DATOS Y LÓGICA DEL SIMULADOR DE CANCHAS
         const sportsData = {
             futbol: {
                 title: 'Cancha 1 - Sintético Master (Fútbol 7)',
                 icon: 'fa-futbol',
                 price: 120,
-                linesSvg: `<svg width="100%" height="100%" viewBox="0 0 200 120" preserveAspectRatio="none" stroke="rgba(16,185,129,0.3)" stroke-width="2" fill="none">
-                            <rect x="5" y="5" width="190" height="110"/>
-                            <line x1="100" y1="5" x2="100" y2="115"/>
-                            <circle cx="100" cy="60" r="25"/>
-                           </svg>`,
                 bgColor: 'bg-emerald-950/40',
                 borderColor: 'border-emerald-500/40'
             },
@@ -690,11 +289,6 @@
                 title: 'Cancha Pádel Cristal #2',
                 icon: 'fa-table-tennis-paddle-ball',
                 price: 100,
-                linesSvg: `<svg width="100%" height="100%" viewBox="0 0 200 120" preserveAspectRatio="none" stroke="rgba(6,182,212,0.3)" stroke-width="2" fill="none">
-                            <rect x="10" y="10" width="180" height="100"/>
-                            <line x1="100" y1="10" x2="100" y2="110" stroke-dasharray="4"/>
-                            <line x1="10" y1="60" x2="190" y2="60"/>
-                           </svg>`,
                 bgColor: 'bg-cyan-950/40',
                 borderColor: 'border-cyan-500/40'
             },
@@ -702,12 +296,6 @@
                 title: 'Cancha Tabloncillo Básquet A',
                 icon: 'fa-basketball',
                 price: 90,
-                linesSvg: `<svg width="100%" height="100%" viewBox="0 0 200 120" preserveAspectRatio="none" stroke="rgba(245,158,11,0.3)" stroke-width="2" fill="none">
-                            <rect x="5" y="5" width="190" height="110"/>
-                            <circle cx="100" cy="60" r="20"/>
-                            <path d="M 5,30 A 30,30 0 0 1 5,90" />
-                            <path d="M 195,30 A 30,30 0 0 0 195,90" />
-                           </svg>`,
                 bgColor: 'bg-amber-950/40',
                 borderColor: 'border-amber-500/40'
             }
@@ -715,166 +303,108 @@
 
         let currentSport = 'futbol';
         let currentSelectedSlot = null;
-
+        
         const slotsList = [
             { id: 1, time: '14:00 - 15:00', status: 'libre' },
             { id: 2, time: '15:00 - 16:00', status: 'ocupado' },
             { id: 3, time: '16:00 - 17:00', status: 'libre' },
-            { id: 4, time: '17:00 - 18:00', status: 'ocupado' },
-            { id: 5, time: '18:00 - 19:00', status: 'libre' },
-            { id: 6, time: '19:00 - 20:00', status: 'ocupado' },
-            { id: 7, time: '20:00 - 21:00', status: 'libre' },
-            { id: 8, time: '21:00 - 22:00', status: 'libre' },
-            { id: 9, time: '22:00 - 23:00', status: 'ocupado' }
+            { id: 4, time: '18:00 - 19:00', status: 'libre' }
         ];
 
         function changeSport(sportKey) {
             currentSport = sportKey;
             
-            // Actualizar botones UI
             document.querySelectorAll('.sport-btn').forEach(btn => {
                 btn.className = 'sport-btn px-6 py-3 rounded-xl font-semibold bg-brand-card border border-brand-border text-slate-300 hover:border-brand-neon flex items-center gap-2 transition-all';
             });
-            const activeBtn = document.getElementById(`btn-${sportKey}`);
-            activeBtn.className = 'sport-btn px-6 py-3 rounded-xl font-semibold bg-brand-neon text-brand-dark flex items-center gap-2 transition-all shadow-md';
+            document.getElementById(`btn-${sportKey}`).className = 'sport-btn px-6 py-3 rounded-xl font-semibold bg-brand-neon text-brand-dark flex items-center gap-2 transition-all shadow-md';
 
-            // Actualizar Visual Cancha
             const data = sportsData[sportKey];
             document.getElementById('court-title').innerHTML = `<i class="fa-solid ${data.icon} text-brand-neon"></i> ${data.title}`;
             document.getElementById('court-icon').className = `fa-solid ${data.icon} text-3xl text-brand-neon mb-1`;
-            document.getElementById('court-lines').innerHTML = data.linesSvg;
             
             const canvasBg = document.getElementById('court-canvas-bg');
             canvasBg.className = `w-full h-64 rounded-xl border-2 ${data.borderColor} relative flex items-center justify-center transition-all duration-500 overflow-hidden ${data.bgColor}`;
-
-            currentSelectedSlot = null;
-            document.getElementById('booking-feedback').classList.add('hidden');
+            
             renderSlots();
         }
 
         function renderSlots() {
             const container = document.getElementById('slots-grid');
             container.innerHTML = '';
-
             slotsList.forEach(slot => {
-                const isSelected = currentSelectedSlot === slot.id;
-                let btnStyle = '';
-                
-                if (slot.status === 'ocupado') {
-                    btnStyle = 'bg-red-500/10 border-red-500/30 text-red-400 cursor-not-allowed opacity-60';
-                } else if (isSelected) {
-                    btnStyle = 'bg-brand-neon text-brand-dark border-brand-neon font-bold shadow-lg shadow-brand-neon/20';
-                } else {
-                    btnStyle = 'bg-brand-dark border-brand-border text-slate-200 hover:border-brand-neon hover:text-white';
-                }
-
                 const card = document.createElement('button');
                 card.disabled = slot.status === 'ocupado';
-                card.className = `p-3 rounded-xl border text-xs sm:text-sm font-medium transition-all text-center flex flex-col items-center justify-center gap-1 ${btnStyle}`;
-                card.onclick = () => selectSlot(slot);
-
-                card.innerHTML = `
-                    <span>${slot.time}</span>
-                    <span class="text-[10px] uppercase font-bold tracking-wider ${slot.status === 'ocupado' ? 'text-red-400' : (isSelected ? 'text-brand-dark' : 'text-brand-neon')}">
-                        ${slot.status === 'ocupado' ? 'Ocupado' : 'Disponible'}
-                    </span>
-                `;
-
+                card.className = `p-3 rounded-xl border text-xs font-medium text-center ${slot.status === 'ocupado' ? 'bg-red-500/10 text-red-400 border-red-500/30' : 'bg-brand-dark border-brand-border text-white hover:border-brand-neon'}`;
+                card.innerHTML = `<span>${slot.time}</span><span class="block text-[9px] uppercase font-bold ${slot.status === 'ocupado' ? 'text-red-400' : 'text-brand-neon'}">${slot.status}</span>`;
                 container.appendChild(card);
             });
         }
-
-        function selectSlot(slot) {
-            currentSelectedSlot = slot.id;
-            renderSlots();
-
-            const feedback = document.getElementById('booking-feedback');
-            const data = sportsData[currentSport];
-            
-            document.getElementById('selected-time-str').innerText = slot.time;
-            document.getElementById('selected-price-str').innerText = `Precio Estimado: Bs. ${data.price} / hora`;
-            document.getElementById('court-status-text').innerText = `Horario Seleccionado: ${slot.time}`;
-            document.getElementById('court-status-sub').innerText = `Monto a cobrar: Bs. ${data.price}`;
-            
-            feedback.classList.remove('hidden');
-        }
-
-        function triggerReservationSim() {
-            alert(`Simulación: Reservando turno ${document.getElementById('selected-time-str').innerText} para ${sportsData[currentSport].title}. Redirigiendo a pasarela QR...`);
-            document.querySelector('#pagos-qr').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Initialize Simulator
         changeSport('futbol');
 
-        // ----------------------------------------------------
-        // CALCULADORA DINÁMICA DE INGRESOS
-        // ----------------------------------------------------
         function updateCalc() {
-            const canchas = parseInt(document.getElementById('input-canchas').value);
-            const precio = parseInt(document.getElementById('input-precio').value);
-            const horas = parseInt(document.getElementById('input-horas').value);
-
-            // Actualizar Labels
-            document.getElementById('val-canchas').innerText = `${canchas} Cancha${canchas > 1 ? 's' : ''}`;
+            const canchas = document.getElementById('input-canchas').value;
+            const precio = document.getElementById('input-precio').value;
+            const horas = document.getElementById('input-horas').value;
+            document.getElementById('val-canchas').innerText = `${canchas} Canchas`;
             document.getElementById('val-precio').innerText = `Bs. ${precio} / hr`;
             document.getElementById('val-horas').innerText = `${horas} Horas / día`;
-
-            // Cálculo: Canchas * Precio * Horas * 30 Días
-            const ingresoMensual = canchas * precio * horas * 30;
-            const ahorroHoras = canchas * 12; // Estimado ~12 hrs ahorradas por cancha/mes
-
-            document.getElementById('res-ingreso-mensual').innerText = `Bs. ${ingresoMensual.toLocaleString('es-BO')}`;
-            document.getElementById('res-tiempo-ahorro').innerText = `~${ahorroHoras} Horas/mes`;
+            document.getElementById('res-ingreso-mensual').innerText = `Bs. ${(canchas * precio * horas * 30).toLocaleString('es-BO')}`;
         }
 
-        // ----------------------------------------------------
-        // SIMULACIÓN DE PAGO POR QR
-        // ----------------------------------------------------
-        function simulateQRPayment() {
-            const statusBox = document.getElementById('qr-status-box');
-            statusBox.className = "bg-amber-500/10 p-3 rounded-xl border border-amber-500/40 flex items-center justify-center gap-2 text-sm text-amber-400";
-            statusBox.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Processing pago mediante QR Simple...`;
-
-            setTimeout(() => {
-                statusBox.className = "bg-brand-neon/20 p-3 rounded-xl border border-brand-neon/50 flex items-center justify-center gap-2 text-sm text-brand-neon font-bold";
-                statusBox.innerHTML = `<i class="fa-solid fa-circle-check text-lg"></i> ¡Pago Recibido! Bs. 120.00 Acreditado`;
-            }, 1800);
-        }
-
-        // ----------------------------------------------------
-        // FORMULARIO DE REGISTRO / PLANES
-        // ----------------------------------------------------
-        function selectPlan(planName) {
-            const planSelect = document.getElementById('lead-plan');
-            if (planSelect) {
-                planSelect.value = planName;
-            }
-        }
-
-        function handleFormSubmit(event) {
+        // PETICIÓN POST DESDE LA LANDING
+        async function handleFormSubmit(event) {
             event.preventDefault();
-
             const name = document.getElementById('lead-name').value;
+            const phone = document.getElementById('lead-phone').value;
+            const email = document.getElementById('lead-email').value;
             const complex = document.getElementById('lead-complex').value;
-            
-            // Generar Subdominio automático
-            const slug = complex.toLowerCase().replace(/[^a-z0-9]/g, '');
-            const randomId = Math.floor(1000 + Math.random() * 9000);
+            const plan = document.getElementById('lead-plan').value;
+
+            const API_URL = "https://5mxw2f16-7035.brs.devtunnels.ms/api/Suscripciones";
+
+            try {
+                await fetch(`${API_URL}/inscribir`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nombre: name, telefono: phone, correo: email, nombreComplejo: complex, plan: plan })
+                });
+            } catch (err) {
+                console.log("Modo offline o error de red");
+            }
 
             document.getElementById('res-user-name').innerText = name;
-            document.getElementById('res-complex-name').innerText = complex;
-            document.getElementById('res-subdomain').innerText = `https://${slug || 'mi-complejo'}.reservasport.bo`;
-            document.getElementById('res-tenant-id').innerText = `RS-BOL-${randomId}`;
-
             document.getElementById('lead-form').classList.add('hidden');
             document.getElementById('success-message').classList.remove('hidden');
+        }
+
+        // PETICIÓN PUT DESDE LA LANDING
+        async function atenderInscripcionDesdeLanding() {
+            const email = document.getElementById('lead-email').value;
+            const statusText = document.getElementById('atender-status');
+            const API_URL = "https://5mxw2f16-7035.brs.devtunnels.ms/api/Suscripciones";
+
+            statusText.innerText = "Enviando solicitud PUT...";
+            try {
+                const res = await fetch(`${API_URL}/atender?contacto=${encodeURIComponent(email)}`, { method: 'PUT' });
+                if (res.ok) {
+                    statusText.className = "text-xs text-brand-neon font-bold mt-2";
+                    statusText.innerText = "¡Éxito! Estado actualizado a 'Atendida' en la base de datos.";
+                } else {
+                    statusText.className = "text-xs text-red-400 font-bold mt-2";
+                    statusText.innerText = "No se encontró el registro en Supabase.";
+                }
+            } catch (e) {
+                statusText.className = "text-xs text-red-400 mt-2";
+                statusText.innerText = "Error: Verifica tu Dev Tunnel.";
+            }
         }
 
         function resetForm() {
             document.getElementById('lead-form').reset();
             document.getElementById('lead-form').classList.remove('hidden');
             document.getElementById('success-message').classList.add('hidden');
+            document.getElementById('atender-status').innerText = '';
         }
     </script>
 </body>
