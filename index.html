@@ -39,6 +39,7 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-neon to-brand-lime flex items-center justify-center text-brand-dark font-extrabold text-xl shadow-lg shadow-brand-neon/20">
                         <i class="fa-solid fa-[#]">RS</i>
@@ -46,6 +47,7 @@
                     <span class="text-2xl font-black tracking-wider text-white">Reserva<span class="text-brand-neon">Sport</span></span>
                 </div>
 
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
                     <a href="#simulador" class="hover:text-brand-neon transition-colors">Simulador</a>
                     <a href="#calculadora" class="hover:text-brand-neon transition-colors">Calculadora</a>
@@ -53,12 +55,31 @@
                     <a href="#planes" class="hover:text-brand-neon transition-colors">Planes</a>
                 </div>
 
+                <!-- CTA Button -->
                 <div class="hidden md:flex items-center gap-4">
                     <a href="#registro" class="px-5 py-2.5 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark hover:opacity-95 transition-all shadow-lg shadow-brand-neon/20 transform hover:-translate-y-0.5">
                         Probar 14 Días Gratis
                     </a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+        
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#simulador" class="block py-2 text-slate-300 hover:text-brand-neon">Simulador</a>
+            <a href="#calculadora" class="block py-2 text-slate-300 hover:text-brand-neon">Calculadora</a>
+            <a href="#pagos-qr" class="block py-2 text-slate-300 hover:text-brand-neon">Cobro QR</a>
+            <a href="#planes" class="block py-2 text-slate-300 hover:text-brand-neon">Planes</a>
+            <a href="#registro" class="block w-full text-center py-3 rounded-xl font-bold bg-brand-neon text-brand-dark mt-4">
+                Probar 14 Días Gratis
+            </a>
         </div>
     </nav>
 
@@ -66,7 +87,7 @@
     <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-neon/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-card border border-brand-border text-brand-neon text-xs sm:text-sm font-semibold mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-card border border-brand-border text-brand-neon text-xs sm:text-sm font-semibold mb-8 animate-pulse">
                 <span class="w-2 h-2 rounded-full bg-brand-neon"></span>
                 Especialmente Diseñado para Complejos Deportivos en Bolivia 🇧🇴
             </div>
@@ -74,17 +95,20 @@
                 Digitaliza y Llena tu Complejo Deportivo en <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon via-brand-lime to-brand-accent">Bolivia</span>
             </h1>
             <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                Automatiza tus reservas 24/7, cobra anticipadamente con <span class="text-white font-medium">QR pago rápido</span> y mantén tus canchas llenas sin descontrol por WhatsApp.
+                Automatiza tus reservas 24/7, cobra anticipadamente con <span class="text-white font-medium">QR pago rápido</span> y mantén tus canchas de fútbol, pádel o básquet siempre llenas sin descontrol por WhatsApp.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
-                <a href="#registro" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark hover:shadow-xl transition-all text-lg">
+                <a href="#registro" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-brand-neon to-brand-lime text-brand-dark hover:shadow-xl hover:shadow-brand-neon/30 transition-all text-lg transform hover:-translate-y-1">
                     <i class="fa-solid fa-rocket mr-2"></i> Comenzar Demo Gratis
+                </a>
+                <a href="#simulador" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-brand-card border border-brand-border text-slate-200 hover:border-brand-neon/50 hover:text-white transition-all text-lg">
+                    Ver Como Funciona
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SIMULADOR INTERACTIVO DE CANCHAS (CON CAMBIO DE DEPORTE RESTAURADO) -->
+    <!-- SIMULADOR INTERACTIVO DE CANCHAS Y TURNOS -->
     <section id="simulador" class="py-20 bg-brand-dark relative border-t border-brand-border/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
@@ -92,6 +116,7 @@
                 <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Experimenta la Reserva Interactiva</h3>
             </div>
 
+            <!-- Selector de Deporte -->
             <div class="flex justify-center gap-3 mb-8 flex-wrap">
                 <button onclick="changeSport('futbol')" id="btn-futbol" class="sport-btn px-6 py-3 rounded-xl font-semibold bg-brand-neon text-brand-dark flex items-center gap-2 transition-all shadow-md">
                     <i class="fa-solid fa-futbol text-lg"></i> Fútbol Sintético
@@ -201,7 +226,7 @@
             <div class="bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
                 <div class="text-center mb-8">
                     <h3 class="text-3xl font-extrabold text-white">Comienza tu Prueba Gratuita de 14 Días</h3>
-                    <p class="text-slate-400 mt-2 text-sm">Envía tus datos y regístralos directamente en el backend de administración.</p>
+                    <p class="text-slate-400 mt-2 text-sm">Los datos se registran directamente en la base de datos de tu backend.</p>
                 </div>
 
                 <form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
@@ -276,7 +301,10 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // DATOS Y LÓGICA DEL SIMULADOR DE CANCHAS
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
         const sportsData = {
             futbol: {
                 title: 'Cancha 1 - Sintético Master (Fútbol 7)',
@@ -352,7 +380,7 @@
             document.getElementById('res-ingreso-mensual').innerText = `Bs. ${(canchas * precio * horas * 30).toLocaleString('es-BO')}`;
         }
 
-        // PETICIÓN POST DESDE LA LANDING
+        // 1. PETICIÓN POST DESDE LA LANDING HACIA TU API EN .NET
         async function handleFormSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('lead-name').value;
@@ -361,7 +389,8 @@
             const complex = document.getElementById('lead-complex').value;
             const plan = document.getElementById('lead-plan').value;
 
-            const API_URL = "https://5mxw2f16-7035.brs.devtunnels.ms/api/Suscripciones";
+            // URL ACTUALIZADA DE TU DEV TUNNEL
+            const API_URL = "https://c1t9b7zw-7035.brs.devtunnels.ms/api/Suscripciones";
 
             try {
                 await fetch(`${API_URL}/inscribir`, {
@@ -378,11 +407,13 @@
             document.getElementById('success-message').classList.remove('hidden');
         }
 
-        // PETICIÓN PUT DESDE LA LANDING
+        // 2. PETICIÓN PUT DESDE LA LANDING PARA ATENDER INSCRIPCIÓN
         async function atenderInscripcionDesdeLanding() {
             const email = document.getElementById('lead-email').value;
             const statusText = document.getElementById('atender-status');
-            const API_URL = "https://5mxw2f16-7035.brs.devtunnels.ms/api/Suscripciones";
+            
+            // URL ACTUALIZADA DE TU DEV TUNNEL
+            const API_URL = "https://c1t9b7zw-7035.brs.devtunnels.ms/api/Suscripciones";
 
             statusText.innerText = "Enviando solicitud PUT...";
             try {
